@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Earnings & Revenue Ledger | ApexCPA Network</title>
+  <meta name="theme-color" content="#080c14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">▲</div>
+          <div>
+            <div>ApexCPA</div>
+            <div class="brand-tag">Affiliate Portal</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="sidebar-scroll">
+        <div>
+          <div class="nav-section-title">Navigation</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="index.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                <span>Network Hub</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="dashboard.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="offers.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                <span>Offers Marketplace</span>
+                <span class="badge-count">245</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="campaigns.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>Campaigns</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="statistics.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                <span>Statistics</span>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a href="earnings.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>Earnings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="payments.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                <span>Payments</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="referrals.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>Referrals (5%)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="nav-section-title">Support & Admin</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="support.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <span>Support Tickets</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="settings.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="admin.html" style="color: var(--accent-cyan);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                <span>Admin Panel</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="manager-card">
+          <div class="manager-avatar">AR</div>
+          <div class="manager-meta">
+            <div class="manager-name">Alex Rivera</div>
+            <div class="manager-role">Affiliate Manager</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main View -->
+    <div class="app-main">
+      <!-- Top Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-menu-btn" onclick="ApexApp.toggleSidebar()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div class="page-title-wrap">
+            <h1 class="page-title">Earnings Ledger</h1>
+            <span class="network-badge"><span class="status-dot"></span> Net-7 Payout Eligible</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button class="btn btn-primary btn-sm" onclick="ApexApp.openModal('withdrawal-modal')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            <span>Request Withdrawal</span>
+          </button>
+
+          <button class="icon-btn theme-toggle-btn" onclick="ApexApp.toggleTheme()" aria-label="Toggle Theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+
+          <button class="icon-btn" onclick="ApexApp.toggleNotificationDrawer()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+            <span class="icon-badge unread-badge">2</span>
+          </button>
+
+          <a href="profile.html" class="user-profile-btn">
+            <div class="user-avatar">JS</div>
+          </a>
+        </div>
+      </header>
+
+      <!-- Main Content Page -->
+      <main class="page-content">
+        <!-- Balance Highlights -->
+        <div class="grid-4">
+          <div class="stat-card" style="border-color: rgba(16, 185, 129, 0.4);">
+            <div class="stat-header">
+              <span class="stat-title">Available for Withdrawal</span>
+              <div class="stat-icon-wrap stat-icon-emerald">💵</div>
+            </div>
+            <div class="stat-value num" style="color: var(--accent-emerald);">$842.10</div>
+            <div class="stat-footer">
+              <span>Ready for payout dispatch</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Lifetime Gross Earnings</span>
+              <div class="stat-icon-wrap stat-icon-cyan">📈</div>
+            </div>
+            <div class="stat-value num">$1,248.50</div>
+            <div class="stat-footer">
+              <span class="trend-up">↑ +$180.40</span>
+              <span>this week</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Already Dispatched</span>
+              <div class="stat-icon-wrap stat-icon-amber">🏦</div>
+            </div>
+            <div class="stat-value num">$406.40</div>
+            <div class="stat-footer">
+              <span>Paid via USDT & Wire</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Next Scheduled Batch</span>
+              <div class="stat-icon-wrap stat-icon-purple">📅</div>
+            </div>
+            <div class="stat-value" style="font-size: 1.25rem; font-weight: 700; color: var(--text-main);">Monday, 10:00 UTC</div>
+            <div class="stat-footer">
+              <span>Net-7 automated clearing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Revenue Trajectory Chart -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Daily Revenue Accrual</div>
+            <div class="card-subtitle">Gross affiliate commission earned each day</div>
+          </div>
+          <div class="card-body">
+            <div style="height: 250px; position: relative;">
+              <canvas id="revenueChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daily Ledger Table -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Daily Performance & Settlement Log</div>
+            <a href="payments.html" class="btn btn-secondary btn-sm">View Payment Invoices →</a>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Clicks</th>
+                  <th>Conversions</th>
+                  <th>CR</th>
+                  <th>EPC</th>
+                  <th>Referral Bonus</th>
+                  <th>Total Daily Accrual</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="daily-ledger-tbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <!-- Mobile Bottom Navigation -->
+      <nav class="mobile-bottom-nav">
+        <a href="dashboard.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+          <span>Home</span>
+        </a>
+        <a href="offers.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path></svg>
+          <span>Offers</span>
+        </a>
+        <a href="statistics.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Statistics</span>
+        </a>
+        <a href="earnings.html" class="bottom-nav-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          <span>Earnings</span>
+        </a>
+        <a href="profile.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Profile</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Withdrawal Modal -->
+  <div id="withdrawal-modal" class="modal-overlay">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 class="modal-title">Request Withdrawal</h3>
+        <button class="modal-close-btn" onclick="ApexApp.closeModal('withdrawal-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.25rem;">
+          <div style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase;">Available Balance</div>
+          <div style="font-size: 1.75rem; font-weight: 800; color: var(--accent-emerald);">$842.10</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Minimum threshold: $100.00 · Payout terms: Net-7 / Instant USDT</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Withdrawal Amount ($ USD)</label>
+          <input type="number" id="withdraw-amount-input" class="form-input" value="842.10" max="842.10" min="100" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Payout Method</label>
+          <select id="withdraw-method-select" class="form-select">
+            <option value="USDT (TRC-20)">USDT (TRC-20) — Zero Fee Instant</option>
+            <option value="Wire Transfer">Wire Transfer (ACH / SEPA) — 1-2 Days</option>
+            <option value="Payoneer">Payoneer Account</option>
+            <option value="Bitcoin (BTC)">Bitcoin (BTC)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Wallet Address / Account Details</label>
+          <input type="text" id="withdraw-destination-input" class="form-input" value="TJz4B8g...3f91Kx" />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="ApexApp.closeModal('withdrawal-modal')">Cancel</button>
+        <button class="btn btn-primary" onclick="submitWithdrawal()">Submit Request</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Drawer -->
+  <aside id="notification-drawer" class="notification-drawer">
+    <div class="notif-header">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-weight: 700; font-size: 1rem;">Notifications</span>
+        <span class="badge badge-success unread-badge">2</span>
+      </div>
+      <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <button class="btn btn-secondary btn-sm" onclick="ApexApp.markAllNotificationsRead()">Mark Read</button>
+        <button onclick="ApexApp.toggleNotificationDrawer()" style="color: var(--text-muted); font-size: 1.25rem;">&times;</button>
+      </div>
+    </div>
+    <div id="notif-list-container" class="notif-list"></div>
+  </aside>
+
+  <script src="/app.js"></script>
+  <script>
+    let revenueChartInstance = null;
+
+    function renderDailyLedger() {
+      const days = [
+        { date: '2026-09-28 (Today)', clicks: 1840, conv: 28, cr: '1.52%', epc: '$0.34', ref: '$12.40', total: '$148.20', status: 'In Progress' },
+        { date: '2026-09-27', clicks: 2120, conv: 34, cr: '1.60%', epc: '$0.35', ref: '$8.20', total: '$196.40', status: 'Settled' },
+        { date: '2026-09-26', clicks: 1980, conv: 31, cr: '1.56%', epc: '$0.33', ref: '$14.00', total: '$182.10', status: 'Settled' },
+        { date: '2026-09-25', clicks: 2050, conv: 32, cr: '1.56%', epc: '$0.32', ref: '$6.50', total: '$174.80', status: 'Settled' },
+        { date: '2026-09-24', clicks: 1780, conv: 26, cr: '1.46%', epc: '$0.29', ref: '$5.00', total: '$142.30', status: 'Settled' }
+      ];
+
+      const tbody = document.getElementById('daily-ledger-tbody');
+      tbody.innerHTML = days.map(d => `
+        <tr>
+          <td style="font-weight: 700; color: var(--text-main);">${d.date}</td>
+          <td class="num">${d.clicks.toLocaleString()}</td>
+          <td class="num" style="font-weight: 700;">${d.conv}</td>
+          <td class="num" style="color: var(--accent-cyan); font-weight: 600;">${d.cr}</td>
+          <td class="num" style="color: var(--accent-emerald); font-weight: 700;">${d.epc}</td>
+          <td class="num" style="color: var(--accent-purple);">${d.ref}</td>
+          <td class="num" style="font-weight: 800; color: var(--text-main); font-size: 0.9375rem;">${d.total}</td>
+          <td><span class="badge ${d.status === 'Settled' ? 'badge-success' : 'badge-warning'}">${d.status}</span></td>
+        </tr>
+      `).join('');
+
+      initRevenueChart(days);
+    }
+
+    function initRevenueChart(days) {
+      const ctx = document.getElementById('revenueChart');
+      if (!ctx) return;
+
+      const isLight = document.documentElement.classList.contains('light-mode');
+      const gridColor = isLight ? 'rgba(0, 0, 0, 0.06)' : 'rgba(255, 255, 255, 0.06)';
+      const textColor = isLight ? '#64748b' : '#94a3b8';
+
+      revenueChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Sep 22', 'Sep 23', 'Sep 24', 'Sep 25', 'Sep 26', 'Sep 27', 'Sep 28'],
+          datasets: [{
+            label: 'Daily Revenue ($)',
+            data: [132, 140, 142.30, 174.80, 182.10, 196.40, 148.20],
+            backgroundColor: 'rgba(16, 185, 129, 0.85)',
+            borderRadius: 4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { color: gridColor }, ticks: { color: textColor } },
+            y: { grid: { color: gridColor }, ticks: { color: textColor, callback: (v) => '$' + v } }
+          }
+        }
+      });
+    }
+
+    function submitWithdrawal() {
+      const amt = document.getElementById('withdraw-amount-input').value;
+      const method = document.getElementById('withdraw-method-select').value;
+      ApexApp.closeModal('withdrawal-modal');
+      ApexApp.addNotification('Withdrawal', 'Withdrawal Request Queued', `Requested $${amt} via ${method}.`);
+      ApexApp.toast('Submitted', `Withdrawal request for $${amt} submitted!`, 'success');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderDailyLedger();
+    });
+  </script>
+</body>
+</html>

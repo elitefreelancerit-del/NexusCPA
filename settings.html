@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account Settings & Security | ApexCPA Network</title>
+  <meta name="theme-color" content="#080c14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">▲</div>
+          <div>
+            <div>ApexCPA</div>
+            <div class="brand-tag">Affiliate Portal</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="sidebar-scroll">
+        <div>
+          <div class="nav-section-title">Navigation</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="index.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                <span>Network Hub</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="dashboard.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="offers.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                <span>Offers Marketplace</span>
+                <span class="badge-count">245</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="campaigns.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>Campaigns</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="statistics.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                <span>Statistics</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="earnings.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>Earnings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="payments.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                <span>Payments</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="referrals.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>Referrals (5%)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="nav-section-title">Support & Admin</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="support.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <span>Support Tickets</span>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a href="settings.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="admin.html" style="color: var(--accent-cyan);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                <span>Admin Panel</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="manager-card">
+          <div class="manager-avatar">AR</div>
+          <div class="manager-meta">
+            <div class="manager-name">Alex Rivera</div>
+            <div class="manager-role">Affiliate Manager</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main View -->
+    <div class="app-main">
+      <!-- Top Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-menu-btn" onclick="ApexApp.toggleSidebar()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div class="page-title-wrap">
+            <h1 class="page-title">Settings & Security</h1>
+            <span class="network-badge"><span class="status-dot"></span> Protected</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button class="icon-btn theme-toggle-btn" onclick="ApexApp.toggleTheme()" aria-label="Toggle Theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+
+          <button class="icon-btn" onclick="ApexApp.toggleNotificationDrawer()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+            <span class="icon-badge unread-badge">2</span>
+          </button>
+
+          <a href="profile.html" class="user-profile-btn">
+            <div class="user-avatar">JS</div>
+          </a>
+        </div>
+      </header>
+
+      <!-- Main Content Page -->
+      <main class="page-content">
+        <!-- Settings Horizontal Tabs -->
+        <div style="display: flex; gap: 0.35rem; overflow-x: auto; padding-bottom: 0.75rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-subtle);" id="settings-tabs-bar">
+          <button class="btn btn-secondary btn-sm active-tab" onclick="switchSettingsTab('account', this)">Account</button>
+          <button class="btn btn-secondary btn-sm" onclick="switchSettingsTab('profile', this)">Profile</button>
+          <button class="btn btn-secondary btn-sm" onclick="switchSettingsTab('privacy', this)">Privacy</button>
+          <button class="btn btn-secondary btn-sm" onclick="switchSettingsTab('security', this)">🔐 Security</button>
+          <button class="btn btn-secondary btn-sm" onclick="switchSettingsTab('notifications', this)">Notifications</button>
+          <button class="btn btn-secondary btn-sm" onclick="switchSettingsTab('payment', this)">Payment</button>
+          <button class="btn btn-secondary btn-sm" onclick="switchSettingsTab('language', this)">Language</button>
+          <button class="btn btn-secondary btn-sm" onclick="switchSettingsTab('darkmode', this)">Dark Mode</button>
+          <button class="btn btn-secondary btn-sm" onclick="switchSettingsTab('datasaver', this)">Data Saver</button>
+          <button class="btn btn-secondary btn-sm" onclick="switchSettingsTab('accessibility', this)">Accessibility</button>
+          <button class="btn btn-secondary btn-sm" onclick="switchSettingsTab('support', this)">Support</button>
+          <button class="btn btn-secondary btn-sm" onclick="switchSettingsTab('terms', this)">Terms</button>
+          <button class="btn btn-secondary btn-sm" onclick="switchSettingsTab('privacypolicy', this)">Privacy Policy</button>
+        </div>
+
+        <!-- 1. ACCOUNT SECTION -->
+        <div id="tab-account" class="settings-section">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Account Information</div>
+            </div>
+            <div class="card-body">
+              <div class="grid-2">
+                <div class="form-group">
+                  <label class="form-label">Username</label>
+                  <input type="text" class="form-input" value="john_sterling_vip" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" class="form-input" value="j.sterling@apexaffiliates.io" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Account Timezone</label>
+                  <select class="form-select">
+                    <option value="UTC">UTC (Coordinated Universal Time)</option>
+                    <option value="EST">America/New_York (EST)</option>
+                    <option value="PST">America/Los_Angeles (PST)</option>
+                    <option value="CET">Europe/Berlin (CET)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Reporting Currency</label>
+                  <select class="form-select">
+                    <option value="USD">USD ($) United States Dollar</option>
+                    <option value="EUR">EUR (€) Euro</option>
+                    <option value="GBP">GBP (£) British Pound</option>
+                  </select>
+                </div>
+              </div>
+              <button class="btn btn-primary" onclick="ApexApp.toast('Saved', 'Account settings updated.', 'success')">Save Account Settings</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. PROFILE SECTION -->
+        <div id="tab-profile" class="settings-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Affiliate Profile Details</div></div>
+            <div class="card-body">
+              <div class="grid-2">
+                <div class="form-group">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-input" value="John Sterling" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Legal Company Name</label>
+                  <input type="text" class="form-input" value="Sterling Performance Media LLC" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Telegram Username</label>
+                  <input type="text" class="form-input" value="@john_sterling_cpa" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Skype Handle</label>
+                  <input type="text" class="form-input" value="live:sterling_cpa" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Media Buyer Bio & Traffic Focus</label>
+                <textarea class="form-textarea">Full-time media buyer specializing in US Nutra direct response and search arbitrage.</textarea>
+              </div>
+              <button class="btn btn-primary" onclick="ApexApp.toast('Saved', 'Profile saved.', 'success')">Update Profile</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. PRIVACY SECTION -->
+        <div id="tab-privacy" class="settings-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Privacy & Visibility Preferences</div></div>
+            <div class="card-body" style="display: flex; flex-direction: column; gap: 1rem;">
+              <label style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+                <div>
+                  <div style="font-weight: 700; color: var(--text-main);">Anonymous Leaderboards</div>
+                  <div style="font-size: 0.75rem; color: var(--text-secondary);">Mask your publisher name on top earning network contests as "Affiliate #84920".</div>
+                </div>
+                <input type="checkbox" checked style="width: 18px; height: 18px;" />
+              </label>
+
+              <label style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+                <div>
+                  <div style="font-weight: 700; color: var(--text-main);">Hide Traffic SubID Breakdown From Reports</div>
+                  <div style="font-size: 0.75rem; color: var(--text-secondary);">Prevent external tracker subids from appearing in aggregate advertiser summaries.</div>
+                </div>
+                <input type="checkbox" checked style="width: 18px; height: 18px;" />
+              </label>
+
+              <button class="btn btn-primary" onclick="ApexApp.toast('Saved', 'Privacy preferences updated.', 'success')">Save Privacy Preferences</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. SECURITY SECTION (FULL REQUIREMENT SUITE) -->
+        <div id="tab-security" class="settings-section" style="display: none;">
+          <!-- Password Security -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Password Security</div></div>
+            <div class="card-body">
+              <div class="grid-3">
+                <div class="form-group">
+                  <label class="form-label">Current Password</label>
+                  <input type="password" class="form-input" placeholder="••••••••••••" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">New Password</label>
+                  <input type="password" id="new-pass-input" class="form-input" placeholder="Enter secure password" oninput="checkPassStrength(this.value)" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Confirm New Password</label>
+                  <input type="password" class="form-input" placeholder="Repeat new password" />
+                </div>
+              </div>
+              <div style="margin-bottom: 1rem;">
+                <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.25rem;">Password Strength: <span id="pass-strength-label" style="font-weight: 700; color: var(--accent-emerald);">Strong</span></div>
+                <div style="height: 6px; border-radius: var(--radius-full); background: var(--bg-muted); overflow: hidden;">
+                  <div id="pass-strength-bar" style="height: 100%; width: 85%; background: var(--accent-emerald);"></div>
+                </div>
+              </div>
+              <button class="btn btn-primary" onclick="ApexApp.toast('Password Updated', 'Your password was changed.', 'success')">Update Password</button>
+            </div>
+          </div>
+
+          <!-- Two-Factor Authentication (2FA) & OTP -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Two-Factor Authentication (2FA & OTP)</div>
+              <span class="badge badge-success" id="2fa-status-badge">Enabled (Google Authenticator)</span>
+            </div>
+            <div class="card-body">
+              <div style="display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+                <div style="width: 120px; height: 120px; background: white; padding: 8px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;">
+                  <!-- QR Code placeholder -->
+                  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; width: 100%; height: 100%;">
+                    <div style="background: black;"></div><div style="background: black;"></div><div style="background: white;"></div><div style="background: black;"></div>
+                    <div style="background: black;"></div><div style="background: white;"></div><div style="background: black;"></div><div style="background: black;"></div>
+                    <div style="background: black;"></div><div style="background: black;"></div><div style="background: white;"></div><div style="background: black;"></div>
+                    <div style="background: black;"></div><div style="background: white;"></div><div style="background: black;"></div><div style="background: black;"></div>
+                  </div>
+                </div>
+                <div style="flex: 1; min-width: 260px;">
+                  <div style="font-weight: 700; color: var(--text-main); margin-bottom: 0.25rem;">Scan QR code with your authenticator app</div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.75rem;">Secret Key: <code style="color: var(--accent-cyan);">JBSWY3DPEHPK3PXP</code></div>
+                  <div style="display: flex; gap: 0.5rem; max-width: 320px;">
+                    <input type="text" id="otp-test-code" class="form-input" placeholder="6-digit OTP code" maxlength="6" />
+                    <button class="btn btn-secondary btn-sm" onclick="verifyOTPCode()">Verify OTP</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Sessions & Logout Other Devices -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Active Devices & Sessions</div>
+                <div class="card-subtitle">Devices currently authorized to access this publisher account</div>
+              </div>
+              <button class="btn btn-danger btn-sm" onclick="logoutOtherDevices()">Logout All Other Devices</button>
+            </div>
+            <div class="card-body" style="padding: 0;">
+              <div id="sessions-container">
+                <!-- Dynamically populated from ApexApp.state.user.sessions -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Login History Audit Table -->
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Login History & Security Audit</div>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date & Time</th>
+                    <th>IP Address</th>
+                    <th>Location</th>
+                    <th>Browser / Device</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="login-history-tbody">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Block List Management -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Fraud & Traffic Block List</div>
+                <div class="card-subtitle">Auto-discard clicks from blocked SubIDs or IP CIDR ranges</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                <input type="text" id="new-block-entry" class="form-input" placeholder="e.g. 192.168.1.0/24 or bad_subid_09" />
+                <button class="btn btn-primary" onclick="addBlockEntry()">Block Entry</button>
+              </div>
+              <div id="block-list-chips" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Security Alerts Log -->
+          <div class="card">
+            <div class="card-header"><div class="card-title">Recent Security Alerts</div></div>
+            <div class="card-body" style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <div style="padding: 0.75rem; border-radius: var(--radius-md); background: rgba(244, 63, 94, 0.1); border: 1px solid rgba(244, 63, 94, 0.25); display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-weight: 700; color: var(--accent-rose); font-size: 0.8125rem;">Blocked Login Attempt from Tor Exit Node</div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">IP 185.220.101.5 (Frankfurt, DE) automatically dropped by firewall rule.</div>
+                </div>
+                <span style="font-size: 0.6875rem; color: var(--text-muted);">Sep 26, 11:05</span>
+              </div>
+              <div style="padding: 0.75rem; border-radius: var(--radius-md); background: var(--bg-surface); border: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <div style="font-weight: 700; color: var(--text-main); font-size: 0.8125rem;">New Payout Destination Registered</div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">USDT TRC-20 wallet updated with 2FA email confirmation.</div>
+                </div>
+                <span style="font-size: 0.6875rem; color: var(--text-muted);">Sep 24, 09:20</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. NOTIFICATIONS SETTINGS -->
+        <div id="tab-notifications" class="settings-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Notification Channels & Delivery</div></div>
+            <div class="card-body" style="display: flex; flex-direction: column; gap: 1rem;">
+              <label style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+                <div>
+                  <div style="font-weight: 700; color: var(--text-main);">Instant Conversion Email Alerts</div>
+                  <div style="font-size: 0.75rem; color: var(--text-secondary);">Receive notification every time a conversion over $50 is approved.</div>
+                </div>
+                <input type="checkbox" checked style="width: 18px; height: 18px;" />
+              </label>
+
+              <label style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+                <div>
+                  <div style="font-weight: 700; color: var(--text-main);">Telegram Bot Payout Notifications</div>
+                  <div style="font-size: 0.75rem; color: var(--text-secondary);">Receive message from @ApexCPA_Bot when withdrawal batches are sent.</div>
+                </div>
+                <input type="checkbox" checked style="width: 18px; height: 18px;" />
+              </label>
+
+              <button class="btn btn-primary" onclick="ApexApp.toast('Saved', 'Notification delivery rules saved.', 'success')">Save Notification Settings</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. PAYMENT SETTINGS -->
+        <div id="tab-payment" class="settings-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Payout Threshold & Wallet Settings</div></div>
+            <div class="card-body">
+              <div class="grid-2">
+                <div class="form-group">
+                  <label class="form-label">Payment Method</label>
+                  <select class="form-select">
+                    <option value="USDT">Tether USDT (TRC-20)</option>
+                    <option value="Wire">Wire Transfer</option>
+                    <option value="Payoneer">Payoneer</option>
+                    <option value="BTC">Bitcoin</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Minimum Payout ($)</label>
+                  <select class="form-select">
+                    <option value="100">$100 (Default)</option>
+                    <option value="250">$250</option>
+                    <option value="500">$500</option>
+                  </select>
+                </div>
+              </div>
+              <button class="btn btn-primary" onclick="ApexApp.toast('Saved', 'Payment preferences saved.', 'success')">Save Payment Settings</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. LANGUAGE -->
+        <div id="tab-language" class="settings-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Dashboard Language</div></div>
+            <div class="card-body">
+              <div class="form-group" style="max-width: 320px;">
+                <label class="form-label">Preferred Interface Language</label>
+                <select class="form-select" onchange="ApexApp.toast('Language Set', 'Language updated to ' + this.options[this.selectedIndex].text, 'info')">
+                  <option value="en">English (US) — Default</option>
+                  <option value="es">Español (Spanish)</option>
+                  <option value="de">Deutsch (German)</option>
+                  <option value="fr">Français (French)</option>
+                  <option value="zh">中文 (Simplified Chinese)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. DARK MODE -->
+        <div id="tab-darkmode" class="settings-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Theme & Color Mode</div></div>
+            <div class="card-body">
+              <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 1rem;">Toggle between High-Contrast Dark Slate and Clean Crisp Light Mode:</p>
+              <button class="btn btn-primary" onclick="ApexApp.toggleTheme()">
+                Toggle Dark / Light Mode
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. DATA SAVER -->
+        <div id="tab-datasaver" class="settings-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Data Saver & Mobile Low-Bandwidth Mode</div></div>
+            <div class="card-body" style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <label style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+                <div>
+                  <div style="font-weight: 700; color: var(--text-main);">Low Bandwidth Mode</div>
+                  <div style="font-size: 0.75rem; color: var(--text-secondary);">Disable heavy charts rendering when on mobile cellular connection.</div>
+                </div>
+                <input type="checkbox" style="width: 18px; height: 18px;" />
+              </label>
+              <button class="btn btn-primary" onclick="ApexApp.toast('Saved', 'Data saver setting saved.', 'success')">Save</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. ACCESSIBILITY -->
+        <div id="tab-accessibility" class="settings-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Accessibility Options</div></div>
+            <div class="card-body" style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <label style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+                <div>
+                  <div style="font-weight: 700; color: var(--text-main);">Reduce Animations</div>
+                  <div style="font-size: 0.75rem; color: var(--text-secondary);">Honor prefers-reduced-motion across modals, charts, and drawer transitions.</div>
+                </div>
+                <input type="checkbox" checked style="width: 18px; height: 18px;" />
+              </label>
+              <button class="btn btn-primary" onclick="ApexApp.toast('Saved', 'Accessibility saved.', 'success')">Save</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. SUPPORT FAQ -->
+        <div id="tab-support" class="settings-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Publisher Help & Documentation</div></div>
+            <div class="card-body" style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <div style="padding: 0.75rem; border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+                <div style="font-weight: 700; color: var(--text-main);">How do I set up S2S postbacks?</div>
+                <div style="font-size: 0.8125rem; color: var(--text-secondary); margin-top: 0.25rem;">Insert your tracking domain into Offer Details > Postback with {click_id} and {payout} tokens.</div>
+              </div>
+              <div style="padding: 0.75rem; border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+                <div style="font-weight: 700; color: var(--text-main);">When do payouts release?</div>
+                <div style="font-size: 0.8125rem; color: var(--text-secondary); margin-top: 0.25rem;">Standard Net-7 clearing occurs every Monday. Daily USDT payouts available upon request for VIPs.</div>
+              </div>
+              <a href="support.html" class="btn btn-secondary btn-sm" style="align-self: flex-start;">Open Support Desk →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. TERMS -->
+        <div id="tab-terms" class="settings-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Network Publisher Terms of Service</div></div>
+            <div class="card-body" style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6; max-height: 320px; overflow-y: auto;">
+              <p><strong>1. Traffic Compliance:</strong> Publishers agree to strictly abide by specific offer restrictions including prohibited traffic channels (no auto-refresh bots, incent traffic, adult traffic, or spam).</p>
+              <p style="margin-top: 0.5rem;"><strong>2. Fraud Monitoring:</strong> All conversions are analyzed by automated fraud scoring filters. Fraudulent, chargeback-heavy, or stolen payment conversions result in instant account ban.</p>
+              <p style="margin-top: 0.5rem;"><strong>3. Payout Terms:</strong> Standard clearing schedule is Net-7 weekly. Minimum threshold is $100.00 USD.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13. PRIVACY POLICY -->
+        <div id="tab-privacypolicy" class="settings-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">GDPR & CCPA Privacy Policy</div></div>
+            <div class="card-body" style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6; max-height: 320px; overflow-y: auto;">
+              <p>ApexCPA respects affiliate data confidentiality. We collect technical metrics solely for conversion matching, postback delivery, and fraudulent bot prevention. We do not sell publisher contact data to third parties.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Mobile Bottom Navigation -->
+      <nav class="mobile-bottom-nav">
+        <a href="dashboard.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+          <span>Home</span>
+        </a>
+        <a href="offers.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path></svg>
+          <span>Offers</span>
+        </a>
+        <a href="statistics.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Statistics</span>
+        </a>
+        <a href="earnings.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          <span>Earnings</span>
+        </a>
+        <a href="profile.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Profile</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Notification Drawer -->
+  <aside id="notification-drawer" class="notification-drawer">
+    <div class="notif-header">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-weight: 700; font-size: 1rem;">Notifications</span>
+        <span class="badge badge-success unread-badge">2</span>
+      </div>
+      <button onclick="ApexApp.toggleNotificationDrawer()" style="color: var(--text-muted); font-size: 1.25rem;">&times;</button>
+    </div>
+    <div id="notif-list-container" class="notif-list"></div>
+  </aside>
+
+  <script src="/app.js"></script>
+  <script>
+    function switchSettingsTab(tabName, btn) {
+      document.querySelectorAll('.settings-section').forEach(s => s.style.display = 'none');
+      document.querySelectorAll('#settings-tabs-bar button').forEach(b => b.classList.remove('active-tab'));
+
+      const target = document.getElementById(`tab-${tabName}`);
+      if (target) {
+        target.style.display = 'block';
+      }
+      if (btn) {
+        btn.classList.add('active-tab');
+      }
+    }
+
+    function checkPassStrength(val) {
+      const bar = document.getElementById('pass-strength-bar');
+      const label = document.getElementById('pass-strength-label');
+      if (val.length < 6) {
+        bar.style.width = '25%'; bar.style.background = 'var(--accent-rose)'; label.textContent = 'Weak'; label.style.color = 'var(--accent-rose)';
+      } else if (val.length < 10) {
+        bar.style.width = '60%'; bar.style.background = 'var(--accent-amber)'; label.textContent = 'Moderate'; label.style.color = 'var(--accent-amber)';
+      } else {
+        bar.style.width = '100%'; bar.style.background = 'var(--accent-emerald)'; label.textContent = 'Strong'; label.style.color = 'var(--accent-emerald)';
+      }
+    }
+
+    function verifyOTPCode() {
+      const code = document.getElementById('otp-test-code').value.trim();
+      if (code.length === 6) {
+        ApexApp.toast('2FA Verified', 'One-time passcode is valid and active.', 'success');
+      } else {
+        ApexApp.toast('Invalid Code', 'Please enter a 6-digit numeric OTP code.', 'warning');
+      }
+    }
+
+    function renderSessions() {
+      const container = document.getElementById('sessions-container');
+      container.innerHTML = ApexApp.state.user.sessions.map((s, i) => `
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-subtle);">
+          <div>
+            <div style="font-weight: 700; color: var(--text-main); font-size: 0.875rem;">${s.device}</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">${s.ip} · ${s.location} · <em>${s.lastActive}</em></div>
+          </div>
+          <div>
+            ${s.active 
+              ? `<span class="badge badge-success">Current Session</span>` 
+              : `<button class="btn btn-secondary btn-sm" onclick="revokeSession(${i})">Revoke</button>`
+            }
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function revokeSession(idx) {
+      ApexApp.state.user.sessions.splice(idx, 1);
+      ApexApp.save();
+      renderSessions();
+      ApexApp.toast('Session Revoked', 'Device session terminated.', 'info');
+    }
+
+    function logoutOtherDevices() {
+      ApexApp.state.user.sessions = ApexApp.state.user.sessions.filter(s => s.active);
+      ApexApp.save();
+      renderSessions();
+      ApexApp.toast('Devices Terminated', 'All other active sessions revoked.', 'success');
+    }
+
+    function renderLoginHistory() {
+      const tbody = document.getElementById('login-history-tbody');
+      tbody.innerHTML = ApexApp.state.user.loginHistory.map(h => `
+        <tr>
+          <td>${h.date}</td>
+          <td style="font-family: var(--font-mono); font-size: 0.75rem;">${h.ip}</td>
+          <td>${h.location}</td>
+          <td>${h.browser}</td>
+          <td><span class="badge ${h.status.startsWith('Success') ? 'badge-success' : 'badge-danger'}">${h.status}</span></td>
+        </tr>
+      `).join('');
+    }
+
+    function renderBlockList() {
+      const container = document.getElementById('block-list-chips');
+      container.innerHTML = ApexApp.state.user.blockList.map((item, i) => `
+        <span style="font-size: 0.75rem; background: rgba(244, 63, 94, 0.15); color: var(--accent-rose); border: 1px solid rgba(244, 63, 94, 0.3); padding: 0.25rem 0.6rem; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 0.35rem;">
+          ${item}
+          <button onclick="removeBlockEntry(${i})" style="color: var(--accent-rose); font-weight: 700;">&times;</button>
+        </span>
+      `).join('');
+    }
+
+    function addBlockEntry() {
+      const val = document.getElementById('new-block-entry').value.trim();
+      if (!val) return;
+      ApexApp.state.user.blockList.push(val);
+      ApexApp.save();
+      document.getElementById('new-block-entry').value = '';
+      renderBlockList();
+      ApexApp.toast('Blocked', `${val} added to blocklist.`, 'info');
+    }
+
+    function removeBlockEntry(idx) {
+      ApexApp.state.user.blockList.splice(idx, 1);
+      ApexApp.save();
+      renderBlockList();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderSessions();
+      renderLoginHistory();
+      renderBlockList();
+
+      // Check if hash matches tab
+      if (window.location.hash) {
+        const hash = window.location.hash.replace('#', '');
+        const targetBtn = Array.from(document.querySelectorAll('#settings-tabs-bar button')).find(b => b.textContent.toLowerCase().includes(hash));
+        if (targetBtn) {
+          switchSettingsTab(hash, targetBtn);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

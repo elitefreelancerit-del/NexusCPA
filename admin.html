@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard & Network Control | ApexCPA</title>
+  <meta name="theme-color" content="#080c14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Admin Sidebar -->
+    <aside class="app-sidebar" style="border-right-color: rgba(6, 182, 212, 0.3);">
+      <div class="sidebar-header" style="background: rgba(6, 182, 212, 0.05);">
+        <a href="admin.html" class="brand-logo">
+          <div class="brand-icon" style="background: linear-gradient(135deg, var(--accent-cyan), var(--accent-indigo));">👑</div>
+          <div>
+            <div>ApexCPA</div>
+            <div class="brand-tag" style="color: var(--accent-cyan);">Super Admin</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="sidebar-scroll">
+        <div>
+          <div class="nav-section-title">Network Operations</div>
+          <ul class="nav-list">
+            <li class="nav-item active">
+              <a href="#dashboard" onclick="switchAdminSection('dashboard', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#users" onclick="switchAdminSection('users', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                <span>Users / Affiliates</span>
+                <span class="badge-count">4.8k</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#offers" onclick="switchAdminSection('offers', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path></svg>
+                <span>Offers</span>
+                <span class="badge-count">245</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#applications" onclick="switchAdminSection('applications', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                <span>Applications</span>
+                <span class="badge-count" style="color: var(--accent-amber);">3 Pending</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#conversions" onclick="switchAdminSection('conversions', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>Conversions</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#clicks" onclick="switchAdminSection('clicks', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                <span>Clicks Log</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#earnings" onclick="switchAdminSection('earnings', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>Earnings & Rev</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#payments" onclick="switchAdminSection('payments', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                <span>Payments & Queue</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#withdrawals" onclick="switchAdminSection('withdrawals', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>Withdrawals</span>
+                <span class="badge-count" style="color: var(--accent-rose);">3 Req</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#campaigns" onclick="switchAdminSection('campaigns', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                <span>Campaigns</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#referrals" onclick="switchAdminSection('referrals', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                <span>Referrals</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="nav-section-title">Support, Logs & System</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#support" onclick="switchAdminSection('support', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <span>Support Tickets</span>
+                <span class="badge-count" style="color: var(--accent-amber);">14 Open</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#reports" onclick="switchAdminSection('reports', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                <span>Reports</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#notifications" onclick="switchAdminSection('notifications', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path></svg>
+                <span>Broadcast Notif</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#settings" onclick="switchAdminSection('settings', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>Network Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#activity" onclick="switchAdminSection('activity', this)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                <span>Activity Logs</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="dashboard.html" class="btn btn-secondary btn-sm" style="width: 100%;">
+          ← Return to Affiliate Portal
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main View -->
+    <div class="app-main">
+      <!-- Top Header -->
+      <header class="app-header" style="border-bottom-color: rgba(6, 182, 212, 0.25);">
+        <div class="header-left">
+          <button class="mobile-menu-btn" onclick="ApexApp.toggleSidebar()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div class="page-title-wrap">
+            <h1 class="page-title" id="admin-page-title">Admin Dashboard</h1>
+            <span class="network-badge" style="color: var(--accent-cyan);"><span class="status-dot" style="background-color: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan);"></span> Network Root Control</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button class="btn btn-primary btn-sm" onclick="openCreateOfferModal()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <span>Create Offer</span>
+          </button>
+
+          <a href="dashboard.html" class="role-switcher-btn">
+            <span>Affiliate View</span>
+          </a>
+
+          <button class="icon-btn theme-toggle-btn" onclick="ApexApp.toggleTheme()" aria-label="Toggle Theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+
+          <button class="icon-btn" onclick="ApexApp.toggleNotificationDrawer()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path></svg>
+            <span class="icon-badge unread-badge">2</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Content Page -->
+      <main class="page-content">
+        <!-- SECTION 1: DASHBOARD -->
+        <div id="admin-sec-dashboard" class="admin-section">
+          <!-- 15 Admin Metrics as specified in user request -->
+          <div class="grid-4">
+            <div class="stat-card">
+              <div class="stat-header"><span class="stat-title">Total Users / Publishers</span><div class="stat-icon-wrap stat-icon-cyan">👥</div></div>
+              <div class="stat-value num">4,820</div>
+              <div class="stat-footer"><span style="color: var(--accent-emerald);">3,140 Active</span><span> · 128 New</span></div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-header"><span class="stat-title">Total Offers Catalog</span><div class="stat-icon-wrap stat-icon-emerald">🏷️</div></div>
+              <div class="stat-value num">245</div>
+              <div class="stat-footer"><span style="color: var(--accent-emerald);">182 Active Live</span><span> · 63 Paused</span></div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-header"><span class="stat-title">Total Network Clicks</span><div class="stat-icon-wrap stat-icon-blue">🖱️</div></div>
+              <div class="stat-value num">1,842,500</div>
+              <div class="stat-footer"><span>99.2% verified bot-clean</span></div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-header"><span class="stat-title">Total Conversions</span><div class="stat-icon-wrap stat-icon-amber">🎯</div></div>
+              <div class="stat-value num">48,290</div>
+              <div class="stat-footer"><span style="color: var(--accent-emerald);">44,120 Appr</span><span> · 3,180 Pend · 990 Rej</span></div>
+            </div>
+          </div>
+
+          <!-- Revenue & Payouts Financial KPIs -->
+          <div class="grid-4">
+            <div class="stat-card">
+              <div class="stat-header"><span class="stat-title">Total Gross Revenue</span><div class="stat-icon-wrap stat-icon-emerald">💵</div></div>
+              <div class="stat-value num" style="color: var(--accent-emerald);">$482,900.00</div>
+              <div class="stat-footer"><span class="trend-up">Net Margin: $120,725.00 (25%)</span></div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-header"><span class="stat-title">Total Affiliate Payout</span><div class="stat-icon-wrap stat-icon-cyan">🏦</div></div>
+              <div class="stat-value num">$362,175.00</div>
+              <div class="stat-footer"><span>Gross publisher liabilities</span></div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-header"><span class="stat-title">Pending Withdrawal Requests</span><div class="stat-icon-wrap stat-icon-rose">⏳</div></div>
+              <div class="stat-value num" style="color: var(--accent-amber);">$24,580.00</div>
+              <div class="stat-footer"><a href="#withdrawals" onclick="switchAdminSection('withdrawals')" style="color: var(--accent-cyan);">Review 3 Pending Queue →</a></div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-header"><span class="stat-title">Paid Out Settlements</span><div class="stat-icon-wrap stat-icon-purple">✓</div></div>
+              <div class="stat-value num">$337,595.00</div>
+              <div class="stat-footer"><span>14 Open Support Tickets</span></div>
+            </div>
+          </div>
+
+          <!-- Admin Charts: Revenue vs Payouts & Traffic Volume -->
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">Monthly Network Revenue vs Affiliate Payouts</div>
+              </div>
+              <div class="card-body">
+                <div style="height: 260px; position: relative;">
+                  <canvas id="adminRevenueChart"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">Network Click & Conversion Volume</div>
+              </div>
+              <div class="card-body">
+                <div style="height: 260px; position: relative;">
+                  <canvas id="adminTrafficChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: USERS / AFFILIATES -->
+        <div id="admin-sec-users" class="admin-section" style="display: none;">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Affiliate Publisher Management</div>
+              <div class="search-input-wrap" style="max-width: 320px;">
+                <input type="text" class="search-input" id="admin-user-search" placeholder="Search user ID, name, email..." oninput="filterAdminUsers()" />
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Affiliate User</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>KYC Status</th>
+                    <th>Tier</th>
+                    <th>Clicks</th>
+                    <th>Conversions</th>
+                    <th>Earnings</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-users-tbody">
+                  <!-- Dynamically populated from ApexApp.state.affiliateUsers -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: OFFERS MANAGEMENT -->
+        <div id="admin-sec-offers" class="admin-section" style="display: none;">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Offers Inventory Management</div>
+                <div class="card-subtitle">Create, edit, toggle active/paused, set caps, and assign managers</div>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="openCreateOfferModal()">+ Create New Offer</button>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Offer Name & ID</th>
+                    <th>Category</th>
+                    <th>GEO</th>
+                    <th>Payout</th>
+                    <th>Avg EPC</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Featured</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-offers-tbody">
+                  <!-- Dynamically populated from ApexApp.state.offers -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4: WITHDRAWALS & PAYMENTS -->
+        <div id="admin-sec-withdrawals" class="admin-section" style="display: none;">
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Withdrawal Requests Queue</div>
+                <div class="card-subtitle">Pending approval & payout settlement</div>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Request ID</th>
+                    <th>Timestamp</th>
+                    <th>Affiliate</th>
+                    <th>Amount</th>
+                    <th>Method</th>
+                    <th>Destination</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-withdrawals-tbody">
+                  <!-- Dynamically populated from ApexApp.state.withdrawalRequests -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 5: APPLICATIONS FOR PRIVATE OFFERS -->
+        <div id="admin-sec-applications" class="admin-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Private Offer Applications</div></div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Publisher</th>
+                    <th>Requested Offer</th>
+                    <th>Traffic Source</th>
+                    <th>Daily Volume</th>
+                    <th>Experience</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>John Sterling (#84920)</strong></td>
+                    <td>Quantum Flow AI Auto-Trading (#2189)</td>
+                    <td>Google Search Ads</td>
+                    <td>2,000+ clicks/day</td>
+                    <td>5 years Media Buying</td>
+                    <td>
+                      <button class="btn btn-primary btn-sm" onclick="ApexApp.toast('Approved', 'Offer application approved.', 'success')">Approve Access</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Marc Dupont (#59124)</strong></td>
+                    <td>KetoMax Burn Diet Drops (#3051)</td>
+                    <td>Taboola Native Ads</td>
+                    <td>5,000+ clicks/day</td>
+                    <td>Native Specialist</td>
+                    <td>
+                      <button class="btn btn-primary btn-sm" onclick="ApexApp.toast('Approved', 'Offer application approved.', 'success')">Approve Access</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 6: CONVERSIONS AUDIT LOG -->
+        <div id="admin-sec-conversions" class="admin-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Live Conversion Stream & Manual Scrub Audit</div></div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Conversion ID</th>
+                    <th>Offer</th>
+                    <th>Affiliate ID</th>
+                    <th>Payout</th>
+                    <th>SubID 1</th>
+                    <th>IP / GEO</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-family: var(--font-mono);">CNV-849201</td>
+                    <td>NordShield VPN Pro (#1042)</td>
+                    <td>AFF-84920</td>
+                    <td class="num" style="color: var(--accent-emerald); font-weight: 700;">$42.00</td>
+                    <td>google_cpc</td>
+                    <td>198.51.100.42 (US)</td>
+                    <td><span class="badge badge-success">Approved</span></td>
+                    <td><button class="btn btn-danger btn-sm" onclick="ApexApp.toast('Scrubbed', 'Conversion rejected for fraud.', 'warning')">Reject / Scrub</button></td>
+                  </tr>
+                  <tr>
+                    <td style="font-family: var(--font-mono);">CNV-849198</td>
+                    <td>Quantum Flow AI (#2189)</td>
+                    <td>AFF-31048</td>
+                    <td class="num" style="color: var(--accent-emerald); font-weight: 700;">$450.00</td>
+                    <td>email_optin</td>
+                    <td>82.165.197.10 (DE)</td>
+                    <td><span class="badge badge-warning">Pending Review</span></td>
+                    <td><button class="btn btn-primary btn-sm" onclick="ApexApp.toast('Approved', 'Conversion verified and approved.', 'success')">Approve</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 7: BROADCAST NOTIFICATIONS -->
+        <div id="admin-sec-notifications" class="admin-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Broadcast Announcement to Affiliates</div></div>
+            <div class="card-body">
+              <div class="form-group">
+                <label class="form-label">Notification Type</label>
+                <select id="broadcast-type" class="form-select">
+                  <option value="New Offer">New Offer</option>
+                  <option value="System">System Upgrade</option>
+                  <option value="Payment">Payment Notice</option>
+                  <option value="Security">Security Alert</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Title</label>
+                <input type="text" id="broadcast-title" class="form-input" placeholder="e.g. New High-Payout Crypto Offer Launched" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Message</label>
+                <textarea id="broadcast-msg" class="form-textarea" placeholder="Detailed announcement copy..."></textarea>
+              </div>
+              <button class="btn btn-primary" onclick="sendBroadcastNotif()">Broadcast to All 4,820 Publishers</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 8: ACTIVITY LOGS -->
+        <div id="admin-sec-activity" class="admin-section" style="display: none;">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Admin System Audit Trail</div></div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Timestamp</th>
+                    <th>Administrator</th>
+                    <th>Action</th>
+                    <th>Target Entity</th>
+                    <th>IP Address</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2026-09-28 07:15:20</td>
+                    <td>Alex Rivera</td>
+                    <td>Updated Voluum postback macro</td>
+                    <td>Offer #1042</td>
+                    <td>10.0.4.1</td>
+                  </tr>
+                  <tr>
+                    <td>2026-09-27 23:10:05</td>
+                    <td>Finance Desk</td>
+                    <td>Approved withdrawal batch #PAY-9921</td>
+                    <td>User #84920</td>
+                    <td>10.0.4.5</td>
+                  </tr>
+                  <tr>
+                    <td>2026-09-27 18:00:12</td>
+                    <td>Sarah Jenkins</td>
+                    <td>Increased daily cap to 150</td>
+                    <td>Offer #3051</td>
+                    <td>10.0.4.2</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Create Offer Modal (Admin) -->
+  <div id="admin-offer-modal" class="modal-overlay">
+    <div class="modal-window" style="max-width: 680px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="admin-offer-modal-title">Create New CPA Offer</h3>
+        <button class="modal-close-btn" onclick="ApexApp.closeModal('admin-offer-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label">Offer Name</label>
+            <input type="text" id="admin-offer-name" class="form-input" placeholder="e.g. UltraClean Antivirus Pro" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Offer ID</label>
+            <input type="number" id="admin-offer-id" class="form-input" value="9104" />
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="form-group">
+            <label class="form-label">Category</label>
+            <select id="admin-offer-cat" class="form-select">
+              <option value="Software">Software</option>
+              <option value="Finance">Finance</option>
+              <option value="Nutra">Nutra</option>
+              <option value="Gaming">Gaming</option>
+              <option value="Sweepstakes">Sweepstakes</option>
+              <option value="Lead Gen">Lead Gen</option>
+              <option value="E-Commerce">E-Commerce</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Target GEO</label>
+            <input type="text" id="admin-offer-geo" class="form-input" value="US, CA, UK" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Payout ($ USD)</label>
+            <input type="number" id="admin-offer-payout" class="form-input" value="50.00" step="0.5" />
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="form-group">
+            <label class="form-label">Estimated EPC ($)</label>
+            <input type="number" id="admin-offer-epc" class="form-input" value="0.95" step="0.05" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Conversion Type</label>
+            <select id="admin-offer-convtype" class="form-select">
+              <option value="CPA (Sale)">CPA (Sale)</option>
+              <option value="CPL (SOI/DOI)">CPL (Lead Form)</option>
+              <option value="CPI (Install)">CPI (Mobile Install)</option>
+              <option value="CPS (RevShare)">CPS (RevShare)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Affiliate Manager</label>
+            <select id="admin-offer-manager" class="form-select">
+              <option value="Alex Rivera">Alex Rivera</option>
+              <option value="Sarah Jenkins">Sarah Jenkins</option>
+              <option value="David Chen">David Chen</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Allowed Traffic Types</label>
+          <input type="text" id="admin-offer-traffic" class="form-input" value="Social, Search, Native, Display" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Preview Landing URL</label>
+          <input type="text" id="admin-offer-previewurl" class="form-input" value="https://preview.advertiser.demo/lander" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Tracking URL Format</label>
+          <input type="text" id="admin-offer-trackurl" class="form-input" value="https://track.apexcpa.network/click?offer_id={offer_id}&aff_id={aff_id}" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Terms & Restrictions</label>
+          <textarea id="admin-offer-terms" class="form-textarea">No brand bidding. No adult. Clean opt-in email only.</textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="ApexApp.closeModal('admin-offer-modal')">Cancel</button>
+        <button class="btn btn-primary" onclick="saveAdminOffer()">Save Offer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- User Audit Detail Modal -->
+  <div id="admin-user-detail-modal" class="modal-overlay">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 class="modal-title" id="user-detail-title">Publisher Audit</h3>
+        <button class="modal-close-btn" onclick="ApexApp.closeModal('admin-user-detail-modal')">&times;</button>
+      </div>
+      <div class="modal-body" id="user-detail-body">
+        <!-- Dynamically rendered -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="ApexApp.closeModal('admin-user-detail-modal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Drawer -->
+  <aside id="notification-drawer" class="notification-drawer">
+    <div class="notif-header">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-weight: 700; font-size: 1rem;">Notifications</span>
+        <span class="badge badge-success unread-badge">2</span>
+      </div>
+      <button onclick="ApexApp.toggleNotificationDrawer()" style="color: var(--text-muted); font-size: 1.25rem;">&times;</button>
+    </div>
+    <div id="notif-list-container" class="notif-list"></div>
+  </aside>
+
+  <script src="/app.js"></script>
+  <script>
+    let adminRevChart = null;
+    let adminTrafficChart = null;
+
+    function switchAdminSection(secId, navLink) {
+      document.querySelectorAll('.admin-section').forEach(sec => sec.style.display = 'none');
+      document.querySelectorAll('.app-sidebar .nav-item').forEach(item => item.classList.remove('active'));
+
+      const target = document.getElementById(`admin-sec-${secId}`);
+      if (target) {
+        target.style.display = 'block';
+      }
+      if (navLink && navLink.parentElement) {
+        navLink.parentElement.classList.add('active');
+      }
+
+      document.getElementById('admin-page-title').textContent = `Admin ${secId.charAt(0).toUpperCase() + secId.slice(1)}`;
+    }
+
+    function initAdminCharts() {
+      const isLight = document.documentElement.classList.contains('light-mode');
+      const gridColor = isLight ? 'rgba(0, 0, 0, 0.06)' : 'rgba(255, 255, 255, 0.06)';
+      const textColor = isLight ? '#64748b' : '#94a3b8';
+
+      const ctxRev = document.getElementById('adminRevenueChart');
+      if (ctxRev) {
+        adminRevChart = new Chart(ctxRev, {
+          type: 'bar',
+          data: {
+            labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep (MTD)'],
+            datasets: [
+              {
+                label: 'Gross Revenue ($)',
+                data: [380000, 420000, 460000, 475000, 482900],
+                backgroundColor: 'rgba(16, 185, 129, 0.85)',
+                borderRadius: 4
+              },
+              {
+                label: 'Publisher Payouts ($)',
+                data: [285000, 315000, 345000, 356000, 362175],
+                backgroundColor: 'rgba(6, 182, 212, 0.85)',
+                borderRadius: 4
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: textColor } } },
+            scales: {
+              x: { grid: { color: gridColor }, ticks: { color: textColor } },
+              y: { grid: { color: gridColor }, ticks: { color: textColor, callback: v => '$' + (v / 1000) + 'k' } }
+            }
+          }
+        });
+      }
+
+      const ctxTraffic = document.getElementById('adminTrafficChart');
+      if (ctxTraffic) {
+        adminTrafficChart = new Chart(ctxTraffic, {
+          type: 'line',
+          data: {
+            labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep'],
+            datasets: [
+              {
+                label: 'Clicks',
+                data: [1200000, 1450000, 1680000, 1790000, 1842500],
+                borderColor: '#3b82f6',
+                yAxisID: 'yClicks',
+                tension: 0.35,
+                borderWidth: 2
+              },
+              {
+                label: 'Conversions',
+                data: [32000, 38500, 43900, 46800, 48290],
+                borderColor: '#10b981',
+                yAxisID: 'yConv',
+                tension: 0.35,
+                borderWidth: 2
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { labels: { color: textColor } } },
+            scales: {
+              x: { grid: { color: gridColor }, ticks: { color: textColor } },
+              yClicks: { position: 'left', grid: { color: gridColor }, ticks: { color: textColor } },
+              yConv: { position: 'right', grid: { drawOnChartArea: false }, ticks: { color: textColor } }
+            }
+          }
+        });
+      }
+    }
+
+    function renderAdminOffers() {
+      const tbody = document.getElementById('admin-offers-tbody');
+      tbody.innerHTML = ApexApp.state.offers.map((o, i) => `
+        <tr>
+          <td>
+            <div style="font-weight: 700; color: var(--text-main);">${o.name}</div>
+            <div style="font-size: 0.6875rem; color: var(--accent-cyan);">ID: #${o.id} · Mgr: ${o.manager}</div>
+          </td>
+          <td>${o.category}</td>
+          <td><span style="font-size: 0.75rem; font-weight: 600;">${o.geo}</span></td>
+          <td class="num" style="color: var(--accent-emerald); font-weight: 700;">$${o.payout.toFixed(2)}</td>
+          <td class="num" style="font-weight: 700;">$${o.epc.toFixed(2)}</td>
+          <td><span class="badge badge-info">${o.payoutType}</span></td>
+          <td>
+            <span class="badge ${o.status === 'Active' ? 'badge-success' : 'badge-muted'}" style="cursor: pointer;" onclick="toggleOfferStatus(${i})">
+              ${o.status}
+            </span>
+          </td>
+          <td>
+            <button class="btn btn-secondary btn-sm" onclick="toggleOfferFeatured(${i})">
+              ${o.featured ? '★ Featured' : '☆ Standard'}
+            </button>
+          </td>
+          <td>
+            <div style="display: flex; gap: 0.35rem;">
+              <button class="btn btn-secondary btn-sm" onclick="editOffer(${i})">Edit</button>
+              <button class="btn btn-danger btn-sm" onclick="deleteOffer(${i})">Delete</button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function toggleOfferStatus(idx) {
+      const o = ApexApp.state.offers[idx];
+      o.status = o.status === 'Active' ? 'Paused' : 'Active';
+      ApexApp.save();
+      renderAdminOffers();
+      ApexApp.toast('Offer Updated', `#${o.id} status changed to ${o.status}.`, 'info');
+    }
+
+    function toggleOfferFeatured(idx) {
+      const o = ApexApp.state.offers[idx];
+      o.featured = !o.featured;
+      ApexApp.save();
+      renderAdminOffers();
+    }
+
+    function deleteOffer(idx) {
+      if (confirm('Delete this offer from network directory?')) {
+        const o = ApexApp.state.offers.splice(idx, 1)[0];
+        ApexApp.save();
+        renderAdminOffers();
+        ApexApp.toast('Offer Deleted', `${o.name} removed.`, 'warning');
+      }
+    }
+
+    function openCreateOfferModal() {
+      document.getElementById('admin-offer-modal-title').textContent = 'Create New CPA Offer';
+      document.getElementById('admin-offer-id').value = Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('admin-offer-name').value = '';
+      ApexApp.openModal('admin-offer-modal');
+    }
+
+    function saveAdminOffer() {
+      const name = document.getElementById('admin-offer-name').value.trim();
+      const id = parseInt(document.getElementById('admin-offer-id').value);
+      const cat = document.getElementById('admin-offer-cat').value;
+      const geo = document.getElementById('admin-offer-geo').value;
+      const payout = parseFloat(document.getElementById('admin-offer-payout').value) || 30.0;
+      const epc = parseFloat(document.getElementById('admin-offer-epc').value) || 0.8;
+      const convType = document.getElementById('admin-offer-convtype').value;
+      const manager = document.getElementById('admin-offer-manager').value;
+      const traffic = document.getElementById('admin-offer-traffic').value;
+      const preview = document.getElementById('admin-offer-previewurl').value;
+      const track = document.getElementById('admin-offer-trackurl').value;
+      const terms = document.getElementById('admin-offer-terms').value;
+
+      if (!name) {
+        ApexApp.toast('Error', 'Offer name required.', 'danger');
+        return;
+      }
+
+      const newOffer = {
+        id: id,
+        name: name,
+        category: cat,
+        geo: geo,
+        payout: payout,
+        payoutType: convType.split(' ')[0],
+        epc: epc,
+        conversionType: convType,
+        trafficType: traffic,
+        status: 'Active',
+        featured: true,
+        description: `Direct advertiser offer for ${geo}. High converting conversion funnel.`,
+        previewUrl: preview,
+        trackingUrl: track,
+        terms: terms,
+        manager: manager
+      };
+
+      ApexApp.state.offers.unshift(newOffer);
+      ApexApp.save();
+      ApexApp.closeModal('admin-offer-modal');
+      renderAdminOffers();
+      ApexApp.toast('Offer Created', `Offer #${id} ${name} published.`, 'success');
+    }
+
+    function renderAdminUsers() {
+      const tbody = document.getElementById('admin-users-tbody');
+      tbody.innerHTML = ApexApp.state.affiliateUsers.map((u, i) => `
+        <tr>
+          <td>
+            <div style="font-weight: 700; color: var(--text-main);">${u.name}</div>
+            <div style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--accent-cyan);">${u.id}</div>
+          </td>
+          <td><span style="font-size: 0.8125rem;">${u.email}</span></td>
+          <td>
+            <span class="badge ${u.status === 'Active' ? 'badge-success' : (u.status === 'Blocked' ? 'badge-danger' : 'badge-warning')}">
+              ${u.status}
+            </span>
+          </td>
+          <td><span class="badge ${u.kyc === 'Verified' ? 'badge-success' : 'badge-warning'}">${u.kyc}</span></td>
+          <td><span style="font-size: 0.75rem; font-weight: 600;">${u.tier}</span></td>
+          <td class="num">${u.clicks.toLocaleString()}</td>
+          <td class="num">${u.conversions}</td>
+          <td class="num" style="color: var(--accent-emerald); font-weight: 700;">$${u.earnings.toLocaleString()}</td>
+          <td>
+            <div style="display: flex; gap: 0.35rem;">
+              <button class="btn btn-secondary btn-sm" onclick="viewUserDetail(${i})">View</button>
+              <button class="btn btn-secondary btn-sm" onclick="toggleUserStatus(${i})">${u.status === 'Active' ? 'Suspend' : 'Activate'}</button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function toggleUserStatus(idx) {
+      const u = ApexApp.state.affiliateUsers[idx];
+      u.status = u.status === 'Active' ? 'Suspended' : 'Active';
+      ApexApp.save();
+      renderAdminUsers();
+      ApexApp.toast('User Updated', `${u.name} is now ${u.status}.`, 'info');
+    }
+
+    function viewUserDetail(idx) {
+      const u = ApexApp.state.affiliateUsers[idx];
+      document.getElementById('user-detail-title').textContent = `Publisher Audit: ${u.name} (${u.id})`;
+      document.getElementById('user-detail-body').innerHTML = `
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="display: flex; gap: 1rem; align-items: center; padding: 1rem; background: var(--bg-card); border-radius: var(--radius-md);">
+            <div class="user-avatar" style="width: 48px; height: 48px; font-size: 1.25rem;">${u.name.substring(0, 2).toUpperCase()}</div>
+            <div>
+              <div style="font-weight: 700; color: var(--text-main); font-size: 1.1rem;">${u.name}</div>
+              <div style="font-size: 0.75rem; color: var(--text-muted);">${u.email} · Status: <strong>${u.status}</strong></div>
+            </div>
+          </div>
+          <div class="grid-3">
+            <div class="stat-card">
+              <span class="stat-title">Lifetime Clicks</span>
+              <span class="stat-value num">${u.clicks.toLocaleString()}</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-title">Conversions</span>
+              <span class="stat-value num">${u.conversions}</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-title">Total Earnings</span>
+              <span class="stat-value num" style="color: var(--accent-emerald);">$${u.earnings.toLocaleString()}</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+            <button class="btn btn-secondary btn-sm" onclick="ApexApp.toast('KYC Verified', '${u.name} KYC verified.', 'success')">Verify KYC</button>
+            <button class="btn btn-danger btn-sm" onclick="ApexApp.toast('Account Blocked', '${u.name} permanently blocked.', 'warning')">Block Account</button>
+          </div>
+        </div>
+      `;
+      ApexApp.openModal('admin-user-detail-modal');
+    }
+
+    function renderAdminWithdrawals() {
+      const tbody = document.getElementById('admin-withdrawals-tbody');
+      tbody.innerHTML = ApexApp.state.withdrawalRequests.map((w, i) => `
+        <tr>
+          <td style="font-family: var(--font-mono); font-weight: 700;">${w.id}</td>
+          <td>${w.date}</td>
+          <td><strong>${w.user}</strong></td>
+          <td class="num" style="color: var(--accent-emerald); font-weight: 800;">$${w.amount.toFixed(2)}</td>
+          <td><span class="badge badge-info">${w.method}</span></td>
+          <td style="font-family: var(--font-mono); font-size: 0.75rem;">${w.destination}</td>
+          <td><span class="badge ${w.status === 'Paid' ? 'badge-success' : 'badge-warning'}">${w.status}</span></td>
+          <td>
+            <div style="display: flex; gap: 0.35rem;">
+              <button class="btn btn-primary btn-sm" onclick="markWithdrawalPaid(${i})">Mark Paid</button>
+              <button class="btn btn-danger btn-sm" onclick="rejectWithdrawal(${i})">Reject</button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function markWithdrawalPaid(idx) {
+      const w = ApexApp.state.withdrawalRequests[idx];
+      w.status = 'Paid';
+      ApexApp.save();
+      renderAdminWithdrawals();
+      ApexApp.toast('Settlement Sent', `Request ${w.id} marked as Paid via ${w.method}.`, 'success');
+    }
+
+    function rejectWithdrawal(idx) {
+      const w = ApexApp.state.withdrawalRequests.splice(idx, 1)[0];
+      ApexApp.save();
+      renderAdminWithdrawals();
+      ApexApp.toast('Rejected', `Request ${w.id} rejected. Balance refunded.`, 'warning');
+    }
+
+    function sendBroadcastNotif() {
+      const title = document.getElementById('broadcast-title').value.trim();
+      const msg = document.getElementById('broadcast-msg').value.trim();
+      const type = document.getElementById('broadcast-type').value;
+
+      if (!title || !msg) {
+        ApexApp.toast('Missing Fields', 'Title and message required.', 'warning');
+        return;
+      }
+
+      ApexApp.addNotification(type, title, msg);
+      document.getElementById('broadcast-title').value = '';
+      document.getElementById('broadcast-msg').value = '';
+      ApexApp.toast('Broadcast Sent', `Notification dispatched to all network publishers.`, 'success');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initAdminCharts();
+      renderAdminOffers();
+      renderAdminUsers();
+      renderAdminWithdrawals();
+
+      if (window.location.hash) {
+        const sec = window.location.hash.replace('#', '');
+        const targetLink = document.querySelector(`.app-sidebar a[href="#${sec}"]`);
+        if (targetLink) {
+          switchAdminSection(sec, targetLink);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publisher Application | ApexCPA Network</title>
+  <meta name="theme-color" content="#080c14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body style="min-height: 100vh; padding: 2.5rem 1.5rem; background: radial-gradient(circle at 50% 10%, #17233d 0%, #080c14 80%); display: flex; align-items: center; justify-content: center;">
+  <div class="card" style="width: 100%; max-width: 640px; margin: 0; box-shadow: var(--shadow-lg); border-color: rgba(16, 185, 129, 0.25);">
+    <div class="card-header" style="text-align: center; justify-content: center; flex-direction: column; padding: 2rem 1.5rem 1rem;">
+      <a href="index.html" class="brand-logo" style="margin-bottom: 0.5rem;">
+        <div class="brand-icon">▲</div>
+        <div>
+          <div>ApexCPA</div>
+          <div class="brand-tag">Join Network</div>
+        </div>
+      </a>
+      <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin-top: 0.5rem;">Apply for an Affiliate Account</h2>
+      <p style="font-size: 0.8125rem; color: var(--text-muted);">Join top media buyers scaling high-converting offers with daily payouts</p>
+    </div>
+
+    <div class="card-body" style="padding: 1.75rem;">
+      <form onsubmit="handleRegisterSubmit(event)">
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label">Full Name *</label>
+            <input type="text" class="form-input" placeholder="e.g. John Sterling" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Company / Agency Name</label>
+            <input type="text" class="form-input" placeholder="e.g. Sterling Media LLC" />
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" class="form-input" placeholder="john@company.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password *</label>
+            <input type="password" class="form-input" placeholder="Minimum 8 characters" required />
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label">Country *</label>
+            <select class="form-select" required>
+              <option value="US">United States (US)</option>
+              <option value="UK">United Kingdom (UK)</option>
+              <option value="CA">Canada (CA)</option>
+              <option value="DE">Germany (DE)</option>
+              <option value="FR">France (FR)</option>
+              <option value="AU">Australia (AU)</option>
+              <option value="Other">Other Global</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Telegram or Skype ID *</label>
+            <input type="text" class="form-input" placeholder="e.g. @your_telegram_id" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Primary Traffic Channels *</label>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; font-size: 0.8125rem; color: var(--text-secondary);">
+            <label style="display: flex; align-items: center; gap: 0.35rem;"><input type="checkbox" checked /> Social (FB/TikTok)</label>
+            <label style="display: flex; align-items: center; gap: 0.35rem;"><input type="checkbox" checked /> Search (Google/Bing)</label>
+            <label style="display: flex; align-items: center; gap: 0.35rem;"><input type="checkbox" checked /> Native (Taboola)</label>
+            <label style="display: flex; align-items: center; gap: 0.35rem;"><input type="checkbox" /> Push / Pop</label>
+            <label style="display: flex; align-items: center; gap: 0.35rem;"><input type="checkbox" /> Email Marketing</label>
+            <label style="display: flex; align-items: center; gap: 0.35rem;"><input type="checkbox" /> SEO / Content</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Monthly Ad Spend Volume</label>
+          <select class="form-select">
+            <option value="1-5k">$1,000 – $5,000 / month</option>
+            <option value="5-20k" selected>$5,000 – $20,000 / month</option>
+            <option value="20-100k">$20,000 – $100,000 / month</option>
+            <option value="100k+">$100,000+ / month (VIP Priority)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label style="font-size: 0.75rem; color: var(--text-secondary); display: flex; align-items: flex-start; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" checked required style="margin-top: 0.2rem;" />
+            <span>I agree to the ApexCPA Publisher Agreement, Anti-Fraud Policies, and Net-7 Weekly Payout Terms.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+          Submit Application →
+        </button>
+      </form>
+    </div>
+
+    <div class="card-footer" style="justify-content: center; font-size: 0.8125rem; color: var(--text-secondary);">
+      Already have an account? <a href="login.html" style="color: var(--accent-cyan); font-weight: 700; margin-left: 0.35rem;">Sign In →</a>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+  <script>
+    function handleRegisterSubmit(e) {
+      e.preventDefault();
+      ApexApp.toast('Application Received', 'Welcome to ApexCPA! Account approved for demo access.', 'success');
+      setTimeout(() => window.location.href = 'dashboard.html', 500);
+    }
+  </script>
+</body>
+</html>

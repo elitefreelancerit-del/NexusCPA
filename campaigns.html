@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campaign Management | ApexCPA Network</title>
+  <meta name="theme-color" content="#080c14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">▲</div>
+          <div>
+            <div>ApexCPA</div>
+            <div class="brand-tag">Affiliate Portal</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="sidebar-scroll">
+        <div>
+          <div class="nav-section-title">Navigation</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="index.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                <span>Network Hub</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="dashboard.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="offers.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                <span>Offers Marketplace</span>
+                <span class="badge-count">245</span>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a href="campaigns.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>Campaigns</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="statistics.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                <span>Statistics</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="earnings.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>Earnings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="payments.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                <span>Payments</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="referrals.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>Referrals (5%)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="nav-section-title">Support & Admin</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="support.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <span>Support Tickets</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="settings.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="admin.html" style="color: var(--accent-cyan);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                <span>Admin Panel</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="manager-card">
+          <div class="manager-avatar">AR</div>
+          <div class="manager-meta">
+            <div class="manager-name">Alex Rivera</div>
+            <div class="manager-role">Affiliate Manager</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main View -->
+    <div class="app-main">
+      <!-- Top Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-menu-btn" onclick="ApexApp.toggleSidebar()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div class="page-title-wrap">
+            <h1 class="page-title">Campaigns</h1>
+            <span class="network-badge"><span class="status-dot"></span> 3 Active Ad Sets</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button class="btn btn-primary btn-sm" onclick="ApexApp.openModal('create-campaign-modal')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <span>Create Campaign</span>
+          </button>
+
+          <button class="icon-btn theme-toggle-btn" onclick="ApexApp.toggleTheme()" aria-label="Toggle Theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+
+          <button class="icon-btn" onclick="ApexApp.toggleNotificationDrawer()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+            <span class="icon-badge unread-badge">2</span>
+          </button>
+
+          <a href="profile.html" class="user-profile-btn">
+            <div class="user-avatar">JS</div>
+          </a>
+        </div>
+      </header>
+
+      <!-- Main Content Page -->
+      <main class="page-content">
+        <!-- Campaign Summary Metrics -->
+        <div class="grid-4">
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Tracked Ad Spend</span>
+              <div class="stat-icon-wrap stat-icon-cyan">📊</div>
+            </div>
+            <div class="stat-value num">$9,920.00</div>
+            <div class="stat-footer">
+              <span>Across FB, Google, Native</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Network Revenue</span>
+              <div class="stat-icon-wrap stat-icon-emerald">💰</div>
+            </div>
+            <div class="stat-value num" style="color: var(--accent-emerald);">$23,924.80</div>
+            <div class="stat-footer">
+              <span class="trend-up">↑ +$14,004.80 profit</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Blended Campaign ROI</span>
+              <div class="stat-icon-wrap stat-icon-purple">🚀</div>
+            </div>
+            <div class="stat-value num" style="color: var(--accent-cyan);">+141.2%</div>
+            <div class="stat-footer">
+              <span>Weighted across all funnels</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Active Campaigns</span>
+              <div class="stat-icon-wrap stat-icon-amber">🎯</div>
+            </div>
+            <div class="stat-value num" id="active-campaigns-count">3</div>
+            <div class="stat-footer">
+              <span>1 paused</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Campaigns Table -->
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Live Traffic Campaigns</div>
+              <div class="card-subtitle">Organize ad groups, SubIDs, and track net ROI</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Campaign Name</th>
+                  <th>Offer</th>
+                  <th>Clicks</th>
+                  <th>Conversions</th>
+                  <th>Spend</th>
+                  <th>Revenue</th>
+                  <th>ROI</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="campaigns-tbody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <!-- Mobile Bottom Navigation -->
+      <nav class="mobile-bottom-nav">
+        <a href="dashboard.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+          <span>Home</span>
+        </a>
+        <a href="offers.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path></svg>
+          <span>Offers</span>
+        </a>
+        <a href="statistics.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Statistics</span>
+        </a>
+        <a href="earnings.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          <span>Earnings</span>
+        </a>
+        <a href="profile.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Profile</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Create Campaign Modal -->
+  <div id="create-campaign-modal" class="modal-overlay">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 class="modal-title">Create Traffic Campaign</h3>
+        <button class="modal-close-btn" onclick="ApexApp.closeModal('create-campaign-modal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Campaign Name</label>
+          <input type="text" id="new-campaign-name" class="form-input" placeholder="e.g. TikTok Ads - NordShield Tier 1 US" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Target Offer</label>
+          <select id="new-campaign-offer" class="form-select">
+            <option value="1042">#1042 - NordShield VPN Pro ($42.00 CPA)</option>
+            <option value="3051">#3051 - KetoMax Burn Diet Drops ($64.00 CPA)</option>
+            <option value="2189">#2189 - Quantum Flow AI Auto-Trading ($450.00 CPA)</option>
+            <option value="4120">#4120 - PlayQuest: Dragon Slayer ($3.80 CPI)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Traffic Source / Channel</label>
+          <select id="new-campaign-source" class="form-select">
+            <option value="fb_ads">Facebook / Meta Ads</option>
+            <option value="google_cpc">Google Search / CPC</option>
+            <option value="tiktok_ads">TikTok Spark Ads</option>
+            <option value="taboola_native">Taboola Native</option>
+            <option value="email_optin">Email List Broadcast</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Estimated Ad Budget ($)</label>
+          <input type="number" id="new-campaign-spend" class="form-input" placeholder="1000" />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="ApexApp.closeModal('create-campaign-modal')">Cancel</button>
+        <button class="btn btn-primary" onclick="saveNewCampaign()">Launch Campaign</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Drawer -->
+  <aside id="notification-drawer" class="notification-drawer">
+    <div class="notif-header">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-weight: 700; font-size: 1rem;">Notifications</span>
+        <span class="badge badge-success unread-badge">2</span>
+      </div>
+      <button onclick="ApexApp.toggleNotificationDrawer()" style="color: var(--text-muted); font-size: 1.25rem;">&times;</button>
+    </div>
+    <div id="notif-list-container" class="notif-list"></div>
+  </aside>
+
+  <script src="/app.js"></script>
+  <script>
+    function renderCampaigns() {
+      const tbody = document.getElementById('campaigns-tbody');
+      tbody.innerHTML = ApexApp.state.campaigns.map((c, i) => `
+        <tr>
+          <td>
+            <div style="font-weight: 700; color: var(--text-main);">${c.name}</div>
+            <div style="font-size: 0.6875rem; color: var(--accent-cyan); font-family: var(--font-mono);">${c.id}</div>
+          </td>
+          <td><span style="font-size: 0.8125rem;">#${c.offerId}</span></td>
+          <td class="num">${c.clicks.toLocaleString()}</td>
+          <td class="num" style="font-weight: 700;">${c.conv}</td>
+          <td class="num" style="color: var(--text-secondary);">$${c.spend.toLocaleString()}</td>
+          <td class="num" style="font-weight: 700; color: var(--accent-emerald);">$${c.revenue.toLocaleString()}</td>
+          <td class="num" style="font-weight: 800; color: ${c.roi.startsWith('+') ? 'var(--accent-emerald)' : 'var(--accent-rose)'};">${c.roi}</td>
+          <td><span class="badge ${c.status === 'Active' ? 'badge-success' : 'badge-muted'}">${c.status}</span></td>
+          <td>
+            <div style="display: flex; gap: 0.35rem;">
+              <button class="btn btn-secondary btn-sm" onclick="toggleCampaignStatus(${i})">${c.status === 'Active' ? 'Pause' : 'Resume'}</button>
+              <button class="btn btn-primary btn-sm" onclick="ApexApp.copyToClipboard('https://track.apexcpa.network/click?offer_id=${c.offerId}&aff_id=84920&cmp=${c.id}', 'Campaign link copied!')">Link</button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+
+      const activeCount = ApexApp.state.campaigns.filter(c => c.status === 'Active').length;
+      document.getElementById('active-campaigns-count').textContent = activeCount;
+    }
+
+    function toggleCampaignStatus(idx) {
+      const c = ApexApp.state.campaigns[idx];
+      c.status = c.status === 'Active' ? 'Paused' : 'Active';
+      ApexApp.save();
+      renderCampaigns();
+      ApexApp.toast('Campaign Updated', `${c.name} status set to ${c.status}`, 'info');
+    }
+
+    function saveNewCampaign() {
+      const name = document.getElementById('new-campaign-name').value;
+      const offerId = parseInt(document.getElementById('new-campaign-offer').value);
+      const spend = parseFloat(document.getElementById('new-campaign-spend').value) || 500;
+
+      if (!name) {
+        ApexApp.toast('Missing Field', 'Please enter a campaign name.', 'warning');
+        return;
+      }
+
+      const newCmp = {
+        id: 'CMP-' + (ApexApp.state.campaigns.length + 101),
+        name: name,
+        offerId: offerId,
+        clicks: 0,
+        conv: 0,
+        spend: spend,
+        revenue: 0,
+        roi: '0%',
+        status: 'Active'
+      };
+
+      ApexApp.state.campaigns.unshift(newCmp);
+      ApexApp.save();
+      ApexApp.closeModal('create-campaign-modal');
+      renderCampaigns();
+      ApexApp.addNotification('System', 'New Campaign Launched', `Campaign "${name}" initialized with custom tracking URL.`);
+      ApexApp.toast('Success', 'Campaign created successfully!', 'success');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCampaigns();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Statistics & Reporting | ApexCPA Network</title>
+  <meta name="theme-color" content="#080c14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">▲</div>
+          <div>
+            <div>ApexCPA</div>
+            <div class="brand-tag">Affiliate Portal</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="sidebar-scroll">
+        <div>
+          <div class="nav-section-title">Navigation</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="index.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                <span>Network Hub</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="dashboard.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="offers.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                <span>Offers Marketplace</span>
+                <span class="badge-count">245</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="campaigns.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>Campaigns</span>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a href="statistics.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                <span>Statistics</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="earnings.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>Earnings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="payments.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                <span>Payments</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="referrals.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>Referrals (5%)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="nav-section-title">Support & Admin</div>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="support.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <span>Support Tickets</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="settings.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="admin.html" style="color: var(--accent-cyan);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                <span>Admin Panel</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="manager-card">
+          <div class="manager-avatar">AR</div>
+          <div class="manager-meta">
+            <div class="manager-name">Alex Rivera</div>
+            <div class="manager-role">Affiliate Manager</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main View -->
+    <div class="app-main">
+      <!-- Top Header -->
+      <header class="app-header">
+        <div class="header-left">
+          <button class="mobile-menu-btn" onclick="ApexApp.toggleSidebar()">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div class="page-title-wrap">
+            <h1 class="page-title">Statistics & Reporting</h1>
+            <span class="network-badge"><span class="status-dot"></span> UTC Timezone</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button class="btn btn-secondary btn-sm" onclick="exportStatsReport()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Export CSV</span>
+          </button>
+
+          <button class="icon-btn theme-toggle-btn" onclick="ApexApp.toggleTheme()" aria-label="Toggle Theme">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+
+          <button class="icon-btn" onclick="ApexApp.toggleNotificationDrawer()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+            <span class="icon-badge unread-badge">2</span>
+          </button>
+
+          <a href="profile.html" class="user-profile-btn">
+            <div class="user-avatar">JS</div>
+          </a>
+        </div>
+      </header>
+
+      <!-- Main Content Page -->
+      <main class="page-content">
+        <!-- Controls Filter Bar -->
+        <div class="filter-bar">
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <select id="stats-date-range" class="select-filter" onchange="refreshStats()">
+              <option value="today">Today</option>
+              <option value="yesterday">Yesterday</option>
+              <option value="last7">Last 7 Days</option>
+              <option value="last30" selected>Last 30 Days</option>
+              <option value="thisMonth">This Month</option>
+            </select>
+
+            <select id="stats-groupby" class="select-filter" onchange="refreshStats()">
+              <option value="offer">Group By: Offer</option>
+              <option value="date">Group By: Date</option>
+              <option value="country">Group By: Country / GEO</option>
+              <option value="device">Group By: Device OS</option>
+              <option value="sub1">Group By: SubID 1</option>
+            </select>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Data updated: <strong style="color: var(--accent-emerald);">Just now</strong></span>
+            <button class="btn btn-secondary btn-sm" onclick="refreshStats()">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+              <span>Refresh</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Summary KPIs Row -->
+        <div class="grid-4">
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Total Clicks / Uniques</span>
+              <div class="stat-icon-wrap stat-icon-cyan">🖱️</div>
+            </div>
+            <div class="stat-value num">24,850</div>
+            <div class="stat-footer">
+              <span style="color: var(--text-secondary);">21,940 unique (88.3%)</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Approved Conversions</span>
+              <div class="stat-icon-wrap stat-icon-emerald">🎯</div>
+            </div>
+            <div class="stat-value num">386</div>
+            <div class="stat-footer">
+              <span style="color: var(--accent-emerald); font-weight: 600;">CR: 1.55%</span>
+              <span>conversion rate</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Average EPC</span>
+              <div class="stat-icon-wrap stat-icon-purple">⚡</div>
+            </div>
+            <div class="stat-value num">$0.32</div>
+            <div class="stat-footer">
+              <span class="trend-up">↑ +$0.04</span>
+              <span>vs account average</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span class="stat-title">Total Revenue Generated</span>
+              <div class="stat-icon-wrap stat-icon-amber">💰</div>
+            </div>
+            <div class="stat-value num" style="color: var(--accent-emerald);">$1,248.50</div>
+            <div class="stat-footer">
+              <span>Zero scrub deductions</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Daily Conversion Breakdown</div>
+            <div class="card-subtitle">Volume trajectory across selected period</div>
+          </div>
+          <div class="card-body">
+            <div style="height: 260px; position: relative;">
+              <canvas id="statsChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comprehensive Report Table -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title" id="table-report-title">Performance by Offer</div>
+            <span class="badge badge-muted">Detailed Metrics</span>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th id="dim-header">Dimension</th>
+                  <th>Raw Clicks</th>
+                  <th>Unique Clicks</th>
+                  <th>Conversions</th>
+                  <th>CR</th>
+                  <th>Payout</th>
+                  <th>Avg EPC</th>
+                  <th>Total Revenue</th>
+                </tr>
+              </thead>
+              <tbody id="stats-tbody">
+                <!-- Dynamically generated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <!-- Mobile Bottom Navigation -->
+      <nav class="mobile-bottom-nav">
+        <a href="dashboard.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+          <span>Home</span>
+        </a>
+        <a href="offers.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m20.59 13.41-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path></svg>
+          <span>Offers</span>
+        </a>
+        <a href="statistics.html" class="bottom-nav-item active">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <span>Statistics</span>
+        </a>
+        <a href="earnings.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          <span>Earnings</span>
+        </a>
+        <a href="profile.html" class="bottom-nav-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span>Profile</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Notification Drawer -->
+  <aside id="notification-drawer" class="notification-drawer">
+    <div class="notif-header">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span style="font-weight: 700; font-size: 1rem;">Notifications</span>
+        <span class="badge badge-success unread-badge">2</span>
+      </div>
+      <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <button class="btn btn-secondary btn-sm" onclick="ApexApp.markAllNotificationsRead()">Mark Read</button>
+        <button onclick="ApexApp.toggleNotificationDrawer()" style="color: var(--text-muted); font-size: 1.25rem;">&times;</button>
+      </div>
+    </div>
+    <div id="notif-list-container" class="notif-list"></div>
+  </aside>
+
+  <script src="/app.js"></script>
+  <script>
+    let statsChartInstance = null;
+
+    function refreshStats() {
+      const groupby = document.getElementById('stats-groupby')?.value || 'offer';
+      const range = document.getElementById('stats-date-range')?.value || 'last30';
+
+      document.getElementById('table-report-title').textContent = `Performance Grouped by ${groupby.toUpperCase()}`;
+      document.getElementById('dim-header').textContent = groupby.charAt(0).toUpperCase() + groupby.slice(1);
+
+      let data = [];
+      if (groupby === 'offer') {
+        data = [
+          { dim: 'NordShield VPN Pro (#1042)', raw: 12400, uniq: 11100, conv: 198, cr: '1.60%', payout: '$42.00', epc: '$0.67', rev: '$8,316.00' },
+          { dim: 'KetoMax Burn Diet (#3051)', raw: 8120, uniq: 7200, conv: 114, cr: '1.40%', payout: '$64.00', epc: '$0.90', rev: '$7,296.00' },
+          { dim: 'Quantum Flow Auto-Trading (#2189)', raw: 3100, uniq: 2740, conv: 18, cr: '0.58%', payout: '$450.00', epc: '$2.61', rev: '$8,100.00' },
+          { dim: 'Dragon Slayer Mobile RPG (#4120)', raw: 1230, uniq: 900, conv: 56, cr: '4.55%', payout: '$3.80', epc: '$0.17', rev: '$212.80' }
+        ];
+      } else if (groupby === 'country') {
+        data = [
+          { dim: 'United States (US)', raw: 14200, uniq: 12600, conv: 232, cr: '1.63%', payout: 'Mixed', epc: '$0.41', rev: '$5,820.00' },
+          { dim: 'United Kingdom (UK)', raw: 4900, uniq: 4300, conv: 74, cr: '1.51%', payout: 'Mixed', epc: '$0.34', rev: '$1,666.00' },
+          { dim: 'Canada (CA)', raw: 3200, uniq: 2850, conv: 46, cr: '1.44%', payout: 'Mixed', epc: '$0.28', rev: '$896.00' },
+          { dim: 'Germany (DE)', raw: 2550, uniq: 2190, conv: 34, cr: '1.33%', payout: 'Mixed', epc: '$0.31', rev: '$790.00' }
+        ];
+      } else if (groupby === 'device') {
+        data = [
+          { dim: 'iOS Safari / Mobile', raw: 13800, uniq: 12200, conv: 218, cr: '1.58%', payout: 'Mixed', epc: '$0.33', rev: '$4,554.00' },
+          { dim: 'Android Chrome / Mobile', raw: 7200, uniq: 6400, conv: 104, cr: '1.44%', payout: 'Mixed', epc: '$0.29', rev: '$2,088.00' },
+          { dim: 'Windows Desktop / Chrome', raw: 3850, uniq: 3340, conv: 64, cr: '1.66%', payout: 'Mixed', epc: '$0.38', rev: '$1,463.00' }
+        ];
+      } else {
+        data = [
+          { dim: 'google_cpc (Search)', raw: 11400, uniq: 10100, conv: 184, cr: '1.61%', payout: 'Mixed', epc: '$0.36', rev: '$4,104.00' },
+          { dim: 'facebook_ad_set1 (Social)', raw: 8400, uniq: 7450, conv: 128, cr: '1.52%', payout: 'Mixed', epc: '$0.31', rev: '$2,604.00' },
+          { dim: 'taboola_native (Native)', raw: 5050, uniq: 4390, conv: 74, cr: '1.47%', payout: 'Mixed', epc: '$0.29', rev: '$1,464.00' }
+        ];
+      }
+
+      const tbody = document.getElementById('stats-tbody');
+      tbody.innerHTML = data.map(r => `
+        <tr>
+          <td style="font-weight: 700; color: var(--text-main);">${r.dim}</td>
+          <td class="num">${r.raw.toLocaleString()}</td>
+          <td class="num" style="color: var(--text-secondary);">${r.uniq.toLocaleString()}</td>
+          <td class="num" style="font-weight: 700;">${r.conv}</td>
+          <td class="num" style="color: var(--accent-cyan); font-weight: 600;">${r.cr}</td>
+          <td style="color: var(--text-muted); font-size: 0.8125rem;">${r.payout}</td>
+          <td class="num" style="color: var(--accent-emerald); font-weight: 700;">${r.epc}</td>
+          <td class="num" style="font-weight: 800; color: var(--text-main);">${r.rev}</td>
+        </tr>
+      `).join('');
+
+      renderStatsChart(data);
+    }
+
+    function renderStatsChart(data) {
+      const ctx = document.getElementById('statsChart');
+      if (!ctx) return;
+
+      if (statsChartInstance) {
+        statsChartInstance.destroy();
+      }
+
+      const isLight = document.documentElement.classList.contains('light-mode');
+      const gridColor = isLight ? 'rgba(0, 0, 0, 0.06)' : 'rgba(255, 255, 255, 0.06)';
+      const textColor = isLight ? '#64748b' : '#94a3b8';
+
+      statsChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: data.map(d => d.dim.split('(')[0].trim()),
+          datasets: [
+            {
+              label: 'Clicks',
+              data: data.map(d => d.raw),
+              backgroundColor: 'rgba(6, 182, 212, 0.65)',
+              borderRadius: 4,
+              yAxisID: 'yClicks'
+            },
+            {
+              label: 'Conversions',
+              data: data.map(d => d.conv),
+              backgroundColor: 'rgba(16, 185, 129, 0.85)',
+              borderRadius: 4,
+              yAxisID: 'yConv'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { labels: { color: textColor } }
+          },
+          scales: {
+            x: { grid: { color: gridColor }, ticks: { color: textColor } },
+            yClicks: { position: 'left', grid: { color: gridColor }, ticks: { color: textColor } },
+            yConv: { position: 'right', grid: { drawOnChartArea: false }, ticks: { color: textColor } }
+          }
+        }
+      });
+    }
+
+    function exportStatsReport() {
+      ApexApp.toast('Export Dispatched', 'Generating CSV statistics report download...', 'success');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      refreshStats();
+    });
+  </script>
+</body>
+</html>

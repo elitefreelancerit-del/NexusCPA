@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In | ApexCPA Network</title>
+  <meta name="theme-color" content="#080c14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body style="display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 1.5rem; background: radial-gradient(circle at 50% 20%, #17233d 0%, #080c14 70%);">
+  <div class="card" style="width: 100%; max-width: 440px; margin: 0; box-shadow: var(--shadow-lg); border-color: rgba(16, 185, 129, 0.25);">
+    <div class="card-header" style="text-align: center; justify-content: center; flex-direction: column; padding: 2rem 1.5rem 1rem;">
+      <a href="index.html" class="brand-logo" style="margin-bottom: 0.5rem;">
+        <div class="brand-icon">▲</div>
+        <div>
+          <div>ApexCPA</div>
+          <div class="brand-tag">Performance</div>
+        </div>
+      </a>
+      <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-top: 0.5rem;">Sign In to Your Dashboard</h2>
+      <p style="font-size: 0.8125rem; color: var(--text-muted);">Access high-converting offers, postbacks & earnings</p>
+    </div>
+
+    <div class="card-body" style="padding: 1.5rem;">
+      <!-- Quick Demo Access Bar -->
+      <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: var(--radius-md); padding: 0.75rem; margin-bottom: 1.25rem;">
+        <div style="font-size: 0.6875rem; font-weight: 700; color: var(--accent-emerald); text-transform: uppercase; margin-bottom: 0.35rem;">1-Click Demo Login</div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn btn-secondary btn-sm" style="flex: 1;" onclick="quickLogin('affiliate')">Affiliate Demo</button>
+          <button class="btn btn-secondary btn-sm" style="flex: 1;" onclick="quickLogin('admin')">Admin Demo</button>
+        </div>
+      </div>
+
+      <form onsubmit="handleLoginSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" id="login-email" class="form-input" value="j.sterling@apexaffiliates.io" required />
+        </div>
+
+        <div class="form-group">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.375rem;">
+            <label class="form-label" style="margin-bottom: 0;">Password</label>
+            <a href="settings.html#security" style="font-size: 0.75rem; color: var(--accent-cyan);">Forgot Password?</a>
+          </div>
+          <input type="password" id="login-pass" class="form-input" value="••••••••••••" required />
+        </div>
+
+        <div class="form-group" style="display: flex; align-items: center; justify-content: space-between;">
+          <label style="font-size: 0.8125rem; color: var(--text-secondary); display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+            <input type="checkbox" checked />
+            Remember this device for 30 days
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+          Sign In to Account →
+        </button>
+      </form>
+    </div>
+
+    <div class="card-footer" style="justify-content: center; font-size: 0.8125rem; color: var(--text-secondary);">
+      New to ApexCPA? <a href="register.html" style="color: var(--accent-emerald); font-weight: 700; margin-left: 0.35rem;">Apply as Publisher →</a>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+  <script>
+    function quickLogin(role) {
+      if (role === 'admin') {
+        ApexApp.toast('Logged In', 'Entering Super Admin Console...', 'success');
+        setTimeout(() => window.location.href = 'admin.html', 400);
+      } else {
+        ApexApp.toast('Logged In', 'Entering Affiliate Dashboard...', 'success');
+        setTimeout(() => window.location.href = 'dashboard.html', 400);
+      }
+    }
+
+    function handleLoginSubmit(e) {
+      e.preventDefault();
+      ApexApp.toast('Authenticated', 'Welcome back, John Sterling!', 'success');
+      setTimeout(() => window.location.href = 'dashboard.html', 400);
+    }
+  </script>
+</body>
+</html>
